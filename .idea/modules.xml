@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/HexaToDecimalConverter.iml" filepath="$PROJECT_DIR$/.idea/HexaToDecimalConverter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ISOReader/.idea/HexaToDecimalConverter.iml" filepath="$PROJECT_DIR$/../ISOReader/.idea/HexaToDecimalConverter.iml" />
     </modules>
   </component>
 </project>
