@@ -5,7 +5,6 @@ def hexadecimalToBinary(ISOString):
     binaryString = ''
 
     for i in ISOString:
-        # print(i)
         if i == "0":
             binaryString = binaryString + "0000"
         elif  i == "1":
@@ -41,4 +40,4 @@ def hexadecimalToBinary(ISOString):
 
     return binaryString
 
-print(hexadecimalToBinary("7EFF4601A8E1E20A"))
+# print(hexadecimalToBinary("7EFF4601A8E1E20A"))
