@@ -2,6 +2,7 @@ import re
 
 def hexadecimalToBinary(ISOString):
 
+    # variable to be returned with the final binary code as a string
     binaryString = ''
 
     for i in ISOString:

@@ -1,9 +1,11 @@
 import re
 
 def hexadecimalToDecimal(ISOString):
-
+    # array to save hexadecimal values for conversion
     decimalArray = []
+    # variable to save decimal final value
     decimal = 0
+
     for i in ISOString:
         if re.search("[a,A]",i):
             decimalArray.append(10)
@@ -28,4 +30,4 @@ def hexadecimalToDecimal(ISOString):
     return decimal
 
 
-print(hexadecimalToDecimal("7EFF4601A8E1E20A"))
+# print(hexadecimalToDecimal("7EFF4601A8E1E20A"))

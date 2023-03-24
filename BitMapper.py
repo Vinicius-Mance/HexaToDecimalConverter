@@ -4,24 +4,27 @@ import re
 
 def BitMapper(ISOString):
 
-    table = pd.read_excel(r'files\infotable.xls', index_col=0, sheet_name='ISO - todos')
-    binaryString = hexadecimalToBinary(ISOString)
 
+    de = pd.read_excel(r'files\infotable.xls', index_col=0, sheet_name='ISO - todos')
     dataElements = []
 
-    for i in table.index:
+    legt = pd.read_excel(r'files\infotable.xls', index_col=1, sheet_name='ISO - todos')
+    lenght = []
 
-        if ( bool(re.search("[A-Z,a-z.]",str(i))) == False and re.search("[0-9]", str(i))):
-                print(str(i))
+    desc = pd.read_excel(r'files\infotable.xls', index_col=2, sheet_name='ISO - todos')
+    description = []
 
+    binaryString = hexadecimalToBinary(ISOString)
 
+    for i in de.index:
+        dataElements.append(i)
 
+    for i in legt.index:
+        lenght.append(i)
 
+    for i in desc.index:
+        description.append(i)
 
-    # return table
+    print(description)
 
-    # return binaryString
-
-print(BitMapper("7EFF4601A8E1E20A"))
-
-# print(hexadecimalToBinary("7EFF4601A8E1E20A"))
+BitMapper("7EFF4601A8E1E20A")
