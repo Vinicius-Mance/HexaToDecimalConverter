@@ -40,5 +40,3 @@ def BitMapper(ISOString):
             bitMapInfo.append(item)
 
     return bitMapInfo
-
-print(BitMapper("7EFF4601A8E1E20A"))

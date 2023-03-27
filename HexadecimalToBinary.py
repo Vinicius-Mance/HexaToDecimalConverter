@@ -40,5 +40,3 @@ def hexadecimalToBinary(ISOString):
             binaryString = binaryString + "1111"
 
     return binaryString
-
-# print(hexadecimalToBinary("7EFF4601A8E1E20A"))
