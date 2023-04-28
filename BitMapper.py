@@ -1,4 +1,4 @@
-from HexadecimalToBinary import hexadecimalToBinary
+from HexadecimalToBinary import HexadecimalToBinary
 import pandas as pd
 import re
 
@@ -26,7 +26,7 @@ def BitMapper(ISOString):
         description.append(i)
 
     # getting binary code by calling hexadecimalToBinary external function
-    binaryString = hexadecimalToBinary(ISOString)
+    binaryString = HexadecimalToBinary(ISOString)
 
     # array to be filled and returned when calling BitMapper function
     bitMapInfo = []

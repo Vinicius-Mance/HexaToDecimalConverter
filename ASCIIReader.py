@@ -1,7 +1,6 @@
 # Python program to find the ASCII value of a character
 import pandas as pd
 import re
-
 def ASCIIReader(data, type):
 
     # default location file for testing
@@ -21,11 +20,25 @@ def ASCIIReader(data, type):
     arrayData = []
 
     i = 0
+    mit = ''
+    bitMap = ''
+    bitMapSize = 0
     while i < len(stringData):
         pair = ''
         pair = (pair + str(stringData[i]) + str(stringData[i + 1]))
         i = i + 2
-        arrayData.append(pair)
+
+        if re.search("[0-7]", stringData[8]):
+            bitMapSize = 24
+        else:
+            bitMapSize = 40
+        if i <= 8:
+            mit = mit + pair
+        elif i <= bitMapSize:
+            bitMap = bitMap + pair
+        else:
+            arrayData.append(pair)
+
     # loop to separate hexadecimals in pairs
     #
     #   for (var i = 0; i < isoString.length; i += 2):
@@ -35,8 +48,10 @@ def ASCIIReader(data, type):
 
     # chr()
     # Prints the ASCII value of the input character
-
-    return arrayData
+    # print(mit)
+    print(bitMap)
+    # print(arrayData)
+    # return arrayData
 
 print(ASCIIReader("./files/isorawdata","rawdata"))
 

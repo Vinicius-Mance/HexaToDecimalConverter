@@ -1,6 +1,6 @@
 import re
 
-def hexadecimalToBinary(ISOString):
+def HexadecimalToBinary(ISOString):
 
     # variable to be returned with the final binary code as a string
     binaryString = ''
