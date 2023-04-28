@@ -3,7 +3,7 @@ import pandas as pd
 import re
 
 def BitMapper(ISOString):
-    
+
     sheetName = "ISO - todos"
     fileLocation = "files\infotable.xls"
 
