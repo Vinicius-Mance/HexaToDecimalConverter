@@ -2,23 +2,25 @@ from HexadecimalToBinary import hexadecimalToBinary
 import pandas as pd
 import re
 
-
 def BitMapper(ISOString):
+    
+    sheetName = "ISO - todos"
+    fileLocation = "files\infotable.xls"
 
     # array to access info from fields's data elements
-    de = pd.read_excel(r'files\infotable.xls', index_col=0, sheet_name='ISO - todos')
+    de = pd.read_excel(fileLocation, index_col=0, sheet_name=sheetName)
     dataElements = []
     for i in de.index:
         dataElements.append(i)
 
     # array to access info from fields's length
-    legt = pd.read_excel(r'files\infotable.xls', index_col=1, sheet_name='ISO - todos')
+    legt = pd.read_excel(fileLocation, index_col=1, sheet_name=sheetName)
     length = []
     for i in legt.index:
         length.append(i)
 
     # array to access info from fields's description
-    desc = pd.read_excel(r'files\infotable.xls', index_col=2, sheet_name='ISO - todos')
+    desc = pd.read_excel(fileLocation, index_col=2, sheet_name=sheetName)
     description = []
     for i in desc.index:
         description.append(i)
