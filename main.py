@@ -5,3 +5,5 @@
 from BitMapper import BitMapper
 from HexadecimalToBinary import HexadecimalToBinary
 
+print(HexadecimalToBinary("1a"))
+

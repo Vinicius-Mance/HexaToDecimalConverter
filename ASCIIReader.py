@@ -1,5 +1,6 @@
 # Python program to find the ASCII value of a character
 from HexadecimalToBinary import HexadecimalToBinary
+from HexadecimalToAscii import HexadecimalToAscii
 import pandas as pd
 import re
 def ASCIIReader(data, type):
@@ -15,14 +16,13 @@ def ASCIIReader(data, type):
         stringData = str(de.columns[0])
     elif (type == "string"):
         stringData = data
-    else :
+    else:
         return "Insert a valid data type"
 
     i = 0
-    mitRough = []
-    bitMapRough = ''
-    messageDataRough = []
-    bitMapSize = 0
+    mit = ''
+    bitMap = ''
+    messageData = ''
 
     while i < len(stringData):
         pair = ''
@@ -34,39 +34,16 @@ def ASCIIReader(data, type):
         else:
             bitMapSize = 40
 
-
         if i <= 8:
-            mitRough.append(pair)
+            mit = mit + HexadecimalToAscii(pair)
         elif i <= bitMapSize:
-            bitMapRough = bitMapRough + pair
+            bitMap = bitMap + HexadecimalToBinary(pair)
         else:
-            messageDataRough.append(pair)
+            messageData = messageData + HexadecimalToAscii(pair)
 
-    print(mitRough)
-    print(bitMapRough)
-    print(messageDataRough)
+    finalMessage = [mit, bitMap, messageData]
 
-    # mitRefined = ''
-    #
-    # for i in mitRough:
-    #     refined = chr(int(i))
-    #     mitRefined = mitRefined + refined
-    #
-    # bitMapRefined = HexadecimalToBinary(bitMapRough)
-    #
-    # messageDataRefined = ''
-    # for i in messageDataRough:
-    #     refined = chr(int(i))
-    #     messageDataRefined = messageDataRefined + refined
-    #
-    # print(mitRefined)
-    # print(bitMapRefined)
-    # print(messageDataRefined)
-
-
-
-
-    # return arrayData
+    return finalMessage
 
 print(ASCIIReader("./files/isorawdata","rawdata"))
 
