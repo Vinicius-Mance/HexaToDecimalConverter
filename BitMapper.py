@@ -2,7 +2,7 @@ from HexadecimalToBinary import HexadecimalToBinary
 import pandas as pd
 import re
 import mysql.connector
-
+from DBConfig import DBConfig
 def BitMapper(ISOString):
 
     # # code to run in case an xls file is necessary to be used
@@ -45,11 +45,15 @@ def BitMapper(ISOString):
     #
     # return bitMapInfo
 
+    # function to get database data from config file
+
+    dbdata = DBConfig('./files/config.ini')
+
     connection = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="",
-        database="iso8583info"
+        host=dbdata['host'],
+        user=dbdata['user'],
+        password=dbdata['password'],
+        database=dbdata['database']
     )
 
     cursor = connection.cursor()
