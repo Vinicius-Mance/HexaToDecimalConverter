@@ -51,6 +51,4 @@ def ASCIIReader(data, type):
 
     return finalMessage
 
-print(ASCIIReader("./files/isorawdata","rawdata"))
-
 

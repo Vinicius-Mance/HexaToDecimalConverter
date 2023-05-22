@@ -63,8 +63,11 @@ def BitMapper(ISOString):
     cursor.close()
     connection.close()
 
-    # getting binary code by calling hexadecimalToBinary external function
-    binaryString = HexadecimalToBinary(ISOString)
+    # getting binary code by calling hexadecimalToBinary external function if string parameter isn't binary already
+    try:
+        binaryString = ISOString
+    except:
+        binaryString = HexadecimalToBinary(ISOString)
 
     # array to return information
     bitMapInfo = []
@@ -76,5 +79,3 @@ def BitMapper(ISOString):
             bitMapInfo.append(result[index])
 
     return bitMapInfo
-
-print(BitMapper("FEFF460128E1E20A0000000000000040"))
