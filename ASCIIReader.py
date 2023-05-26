@@ -3,20 +3,18 @@ from HexadecimalToBinary import HexadecimalToBinary
 from HexadecimalToAscii import HexadecimalToAscii
 import pandas as pd
 import re
-def ASCIIReader(data, type):
+def ASCIIReader(data):
 
     # default location file for testing
     # "./files/isorawdata"
 
     # variable to store the data as a string to be interpreted
 
-    if (type == "rawdata"):
+    try:
         de = pd.read_csv(data)
         stringData = str(de.columns[0])
-    elif (type == "string"):
+    except:
         stringData = data
-    else:
-        return "Insert a valid data type"
 
     # variables to store data as strings to be returned at end of function
     i = 0
