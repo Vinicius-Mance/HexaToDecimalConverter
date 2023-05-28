@@ -75,7 +75,7 @@ def BitMapper(ISOString):
     for index, i in enumerate(binaryString):
 
         # statement to save field if present
-        if int(i) == 1:
+        if int(i) == 1 and result[index][0] != 1:
             bitMapInfo.append(result[index])
 
     return bitMapInfo
