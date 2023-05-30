@@ -1,7 +1,5 @@
 from BitMapper import BitMapper
 from ASCIIReader import ASCIIReader
-from DBConfig import DBConfig
-import mysql
 import re
 
 def MessageStorage8583(ISOString):
@@ -9,70 +7,145 @@ def MessageStorage8583(ISOString):
     asciiInfo = ASCIIReader(ISOString)
     # print("MTI: " + asciiInfo[0])
     # print("Bitmap: " + asciiInfo[1])
-    print("Info: " + asciiInfo[2])
+    # print("Info: " + asciiInfo[2])
     # print(asciiInfo)
 
-    # fields = BitMapper(asciiInfo[1])
-    dbdata = DBConfig('./files/config.ini')
+    isoString = asciiInfo[1]
+    messageData = asciiInfo[2]
 
-    connection = mysql.connector.connect(
-        host=dbdata['host'],
-        user=dbdata['user'],
-        password=dbdata['password'],
-        database=dbdata['database']
-    )
-
-    cursor = connection.cursor()
-    query = f'SELECT element_log_iso, length_log_iso, description_log_iso FROM log_iso'
-    cursor.execute(query)
-    result = cursor.fetchall()
-    cursor.close()
-    connection.close()
-
-    fields = result
+    print(BitMapper(isoString))
+    print(messageData)
     tempStorage = []
-    pointlessVar = ''
 
-    for i in fields:
-        print("Position: "+str(i[0])+" | Size: "+i[1]+" | Type: "+i[2])
-        if re.search("LVAR", i[1]):
-            pointlessVar = ''
-            print("Position: " + str(i[0]) + " | Size: " + i[1] + " | Type: " + i[2])
-            print("LVAR")
-        elif re.search("ans", i[1]):
-            pointlessVar = ''
-            print("Position: " + str(i[0]) + " | Size: " + i[1] + " | Type: " + i[2])
-            print("ans")
-        elif re.search("an", i[1]):
-            pointlessVar = ''
-            print("Position: " + str(i[0]) + " | Size: " + i[1] + " | Type: " + i[2])
-            print("an")
-        elif re.search("as", i[1]):
-            pointlessVar = ''
-            print("Position: " + str(i[0]) + " | Size: " + i[1] + " | Type: " + i[2])
-            print("as")
-        elif re.search("ns", i[1]):
-            pointlessVar = ''
-            print("Position: " + str(i[0]) + " | Size: " + i[1] + " | Type: " + i[2])
-            print("ns")
-        elif re.search("a", i[1]):
-            pointlessVar = ''
-            print("Position: " + str(i[0]) + " | Size: " + i[1] + " | Type: " + i[2])
-            print("a")
-        elif re.search("n", i[1]):
-            pointlessVar = ''
-            print("Position: " + str(i[0]) + " | Size: " + i[1] + " | Type: " + i[2])
-            print('n')
-        elif re.search("s", i[1]):
-            pointlessVar = ''
-            print("Position: " + str(i[0]) + " | Size: " + i[1] + " | Type: " + i[2])
-            print("s")
-        elif re.search("b", i[1]):
-            pointlessVar = ''
-            print("Position: " + str(i[0]) + " | Size: " + i[1] + " | Type: " + i[2])
-            print("b")
+    # message data position
+    mdp = 0
+
+    for i in BitMapper(isoString):
+
+        # print("Position: "+str(i[0])+" | Size: "+i[1]+" | Type: "+i[2])
+        # maxLogSize = re.findall(r'\d+', i[1])
+
+        if re.search("LLLVAR", i[1]):
+            strSize = messageData[mdp] + "" + messageData[mdp + 1] + "" + messageData[mdp + 2]
+            mdp = mdp + 3
+        elif re.search("LLVAR", i[1]):
+            strSize = messageData[mdp] + "" + messageData[mdp + 1]
+            mdp = mdp + 2
+        elif re.search("LVAR", i[1]):
+            strSize = messageData[mdp]
+            mdp = mdp + 1
         else:
-            pointlessVar = ''
-            print("Position: " + str(i[0]) + " | Size: " + i[1] + " | Type: " + i[2])
+            strSize = re.findall(r'\d+', i[1])[0]
+            # print(strSize)
+
+        if re.search("ans", i[1]):
+            o = 0
+            string = ''
+            while o < int(strSize):
+                string = string + messageData[mdp]
+                mdp = mdp + 1
+                o = o + 1
+            array = []
+
+            array.append("Position: "+str(i[0])+" | Size: "+i[1]+" | Type: "+i[2]+"| Info: "+ string)
+            tempStorage.append(array)
+
+
+        elif re.search("an", i[1]):
+            o = 0
+            string = ''
+            while o < int(strSize):
+                string = string + messageData[mdp]
+                mdp = mdp + 1
+                o = o + 1
+            array = []
+
+            array.append("Position: "+str(i[0])+" | Size: "+i[1]+" | Type: "+i[2]+"| Info: "+ string)
+            tempStorage.append(array)
+
+        elif re.search("as", i[1]):
+            o = 0
+            string = ''
+            while o < int(strSize):
+                string = string + messageData[mdp]
+                mdp = mdp + 1
+                o = o + 1
+            array = []
+
+            array.append("Position: "+str(i[0])+" | Size: "+i[1]+" | Type: "+i[2]+"| Info: "+ string)
+            tempStorage.append(array)
+
+        elif re.search("ns", i[1]):
+            o = 0
+            string = ''
+            while o < int(strSize):
+                string = string + messageData[mdp]
+                mdp = mdp + 1
+                o = o + 1
+            array = []
+
+            array.append("Position: "+str(i[0])+" | Size: "+i[1]+" | Type: "+i[2]+"| Info: "+ string)
+            tempStorage.append(array)
+
+        elif re.search("a", i[1]):
+            o = 0
+            string = ''
+            while o < int(strSize):
+                string = string + messageData[mdp]
+                mdp = mdp + 1
+                o = o + 1
+            array = []
+
+            array.append("Position: "+str(i[0])+" | Size: "+i[1]+" | Type: "+i[2]+"| Info: "+ string)
+            tempStorage.append(array)
+
+        elif re.search("n", i[1]):
+            o = 0
+            string = ''
+            while o < int(strSize):
+                string = string + messageData[mdp]
+                mdp = mdp + 1
+                o = o + 1
+            array = []
+
+            array.append("Position: "+str(i[0])+" | Size: "+i[1]+" | Type: "+i[2]+"| Info: "+ string)
+            tempStorage.append(array)
+
+        elif re.search("s", i[1]):
+            o = 0
+            string = ''
+            while o < int(strSize):
+                string = string + messageData[mdp]
+                mdp = mdp + 1
+                o = o + 1
+            array = []
+
+            array.append("Position: "+str(i[0])+" | Size: "+i[1]+" | Type: "+i[2]+"| Info: "+ string)
+            tempStorage.append(array)
+
+        elif re.search("b", i[1]):
+            o = 0
+            string = ''
+            while o < int(strSize):
+                string = string + messageData[mdp]
+                mdp = mdp + 1
+                o = o + 1
+            array = []
+
+            array.append("Position: "+str(i[0])+" | Size: "+i[1]+" | Type: "+i[2]+"| Info: "+ string)
+            tempStorage.append(array)
+
+        else:
+            o = 0
+            string = ''
+            while o < int(strSize):
+                string = string + messageData[mdp]
+                mdp = mdp + 1
+                o = o + 1
+            array = []
+
+            array.append("Position: "+str(i[0])+" | Size: "+i[1]+" | Type: "+i[2]+"| Info: "+ string)
+            tempStorage.append(array)
+
 
     return tempStorage
