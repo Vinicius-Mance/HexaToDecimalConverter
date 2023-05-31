@@ -11,5 +11,5 @@
 standardfile = './files/isorawdata'
 from MessageStorage8583 import MessageStorage8583
 
-print(MessageStorage8583(standardfile))
-
+for i in MessageStorage8583(standardfile):
+    print(i)

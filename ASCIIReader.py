@@ -3,13 +3,13 @@ from HexadecimalToBinary import HexadecimalToBinary
 from HexadecimalToAscii import HexadecimalToAscii
 import pandas as pd
 import re
+
+# this function gets an ascii message and interpret it, either by a rawdata filepath, or a string
+# it returns an array with all the message information:
+# Message Type Indicator, binary bitmap, and the information from the massage itself
 def ASCIIReader(data):
 
-    # default location file for testing
-    # "./files/isorawdata"
-
     # variable to store the data as a string to be interpreted
-
     try:
         de = pd.read_csv(data)
         stringData = str(de.columns[0])
@@ -17,11 +17,11 @@ def ASCIIReader(data):
         stringData = data
 
     # variables to store data as strings to be returned at end of function
-    i = 0
     mti = ''
     bitMap = ''
     messageData = ''
 
+    i = 0
     while i < len(stringData):
 
         # variable to manipulate raw data as pairs of hexadecimal values
