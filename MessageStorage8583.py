@@ -25,7 +25,6 @@ def MessageStorage8583(ISOString):
     # each individual While loop saves the sorted information, and progresses
     # the position that indicates where is the next information to be sorted in the
     # rawdata string by the mdp variable above
-
     for i in BitMapper(isoString):
 
         # condition to change the mdp position in case of a variable field
@@ -41,114 +40,18 @@ def MessageStorage8583(ISOString):
         else:
             strSize = re.findall(r'\d+', i[1])[0]
 
-        # as of this moment, this sorter by type is redundant, however it might be useful in future implementations
-        if re.search("ans", i[1]):
-            o = 0
-            string = ''
-            while o < int(strSize):
-                string = string + messageData[mdp]
-                mdp = mdp + 1
-                o = o + 1
-            array = []
-
-            array.append("Position: "+str(i[0])+" | Size: "+i[1]+" | Type: "+i[2]+"| Info: "+ string)
-            storage.append(array)
-
-
-        elif re.search("an", i[1]):
-            o = 0
-            string = ''
-            while o < int(strSize):
-                string = string + messageData[mdp]
-                mdp = mdp + 1
-                o = o + 1
-            array = []
-
-            array.append("Position: "+str(i[0])+" | Size: "+i[1]+" | Type: "+i[2]+"| Info: "+ string)
-            storage.append(array)
-
-        elif re.search("as", i[1]):
-            o = 0
-            string = ''
-            while o < int(strSize):
-                string = string + messageData[mdp]
-                mdp = mdp + 1
-                o = o + 1
-            array = []
-
-            array.append("Position: "+str(i[0])+" | Size: "+i[1]+" | Type: "+i[2]+"| Info: "+ string)
-            storage.append(array)
-
-        elif re.search("ns", i[1]):
-            o = 0
-            string = ''
-            while o < int(strSize):
-                string = string + messageData[mdp]
-                mdp = mdp + 1
-                o = o + 1
-            array = []
-
-            array.append("Position: "+str(i[0])+" | Size: "+i[1]+" | Type: "+i[2]+"| Info: "+ string)
-            storage.append(array)
-
-        elif re.search("a", i[1]):
-            o = 0
-            string = ''
-            while o < int(strSize):
-                string = string + messageData[mdp]
-                mdp = mdp + 1
-                o = o + 1
-            array = []
-
-            array.append("Position: "+str(i[0])+" | Size: "+i[1]+" | Type: "+i[2]+"| Info: "+ string)
-            storage.append(array)
-
-        elif re.search("n", i[1]):
-            o = 0
-            string = ''
-            while o < int(strSize):
-                string = string + messageData[mdp]
-                mdp = mdp + 1
-                o = o + 1
-            array = []
-
-            array.append("Position: "+str(i[0])+" | Size: "+i[1]+" | Type: "+i[2]+"| Info: "+ string)
-            storage.append(array)
-
-        elif re.search("s", i[1]):
-            o = 0
-            string = ''
-            while o < int(strSize):
-                string = string + messageData[mdp]
-                mdp = mdp + 1
-                o = o + 1
-            array = []
-
-            array.append("Position: "+str(i[0])+" | Size: "+i[1]+" | Type: "+i[2]+"| Info: "+ string)
-            storage.append(array)
-
-        elif re.search("b", i[1]):
-            o = 0
-            string = ''
-            while o < int(strSize):
-                string = string + messageData[mdp]
-                mdp = mdp + 1
-                o = o + 1
-            array = []
-
-            array.append("Position: "+str(i[0])+" | Size: "+i[1]+" | Type: "+i[2]+"| Info: "+ string)
-            storage.append(array)
-
-        else:
-            o = 0
-            string = ''
-            while o < int(strSize):
-                string = string + messageData[mdp]
-                mdp = mdp + 1
-                o = o + 1
-            array = []
-
-            array.append("Position: "+str(i[0])+" | Size: "+i[1]+" | Type: "+i[2]+"| Info: "+ string)
-            storage.append(array)
+        # sortableLoop - extra code found on UnusedCode file - code #0
+        u = 0
+        string = ''
+        while u < int(strSize):
+            string = string + messageData[mdp]
+            mdp = mdp + 1
+            u = u + 1
+        array = dict()
+        array["bit"] = str(i[0])
+        array["length"] = i[1]
+        array["description"] = i[2]
+        array["value"] = string
+        storage.append(array)
 
     return storage
