@@ -67,9 +67,10 @@ def BitMapper(ISOString):
 
     # getting binary code by calling hexadecimalToBinary external function if string parameter isn't binary already
     try:
-        binaryString = HexadecimalToBinary(ISOString)
-    except:
         binaryString = ISOString
+    except:
+        binaryString = HexadecimalToBinary(ISOString)
+
 
     # array to return information
     bitMapInfo = []
