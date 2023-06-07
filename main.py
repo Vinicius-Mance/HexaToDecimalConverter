@@ -1,3 +1,5 @@
+from MessageInfoReturner import MessageInfoReturner
+
 # main file for testing
 # standard strings for testing
 
@@ -9,7 +11,5 @@
 
 # standard filepath for testing:
 standardfile = './files/isorawdata'
-from MessageStorage8583 import MessageStorage8583
 
-print(MessageStorage8583(standardfile))
-
+MessageInfoReturner(standardfile)
