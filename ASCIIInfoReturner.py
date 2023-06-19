@@ -1,9 +1,9 @@
-from MessageStorage8583 import MessageStorage8583
+from ASCIIStorage import ASCIIStorage
 import os
 
-def MessageInfoReturner(ISOString):
+def ASCIIInfoReturner(ISOString):
 
-    data = MessageStorage8583(ISOString)
+    data = ASCIIStorage(ISOString)
     filetext = []
     for i in data:
         line = f'Bit: {i["bit"]} - {i["description"]} - {i["value"]}'

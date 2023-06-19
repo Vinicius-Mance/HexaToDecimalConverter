@@ -1,4 +1,4 @@
-from MessageInfoReturner import MessageInfoReturner
+from ASCIIInfoReturner import ASCIIInfoReturner
 
 # main file for testing
 # standard strings for testing
@@ -9,7 +9,7 @@ from MessageInfoReturner import MessageInfoReturner
 # (two bitmaps):
 # map2 = "FEFF460128E1E20A0000000000000040"
 
-# standard filepath for testing:
-standardfile = './files/isorawdata'
+# standard filepath for testing ASCII files:
+standardAscii = './files/rawascii'
 
-MessageInfoReturner(standardfile)
+ASCIIInfoReturner(standardAscii)

@@ -3,7 +3,7 @@ from ASCIIReader import ASCIIReader
 import re
 
 # this function returns all the data, sorted and ready to be read
-def MessageStorage8583(ISOString):
+def ASCIIStorage(ISOString):
 
     # variable to get all the fields present on the message by the ASCIIReader function
     asciiInfo = ASCIIReader(ISOString)
