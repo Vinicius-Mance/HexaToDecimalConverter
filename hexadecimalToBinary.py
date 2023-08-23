@@ -2,12 +2,12 @@ import re
 
 # this function receives a hexadecimal string and return it as a binary string
 # this function is intended to be used for a bitmap interpretation, but can be used in other instances
-def hexadecimalToBinary(ISOString):
+def hexadecimalToBinary(isoString):
 
     # variable to be returned with the final binary code as a string
     binaryString = ''
 
-    for i in ISOString:
+    for i in isoString:
         if i == "0":
             binaryString = binaryString + "0000"
         elif  i == "1":

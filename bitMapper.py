@@ -6,7 +6,7 @@ from dbConfig import dbConfig
 
 # this function receives a bitmap, and return all the present fields
 # either hexadecimal or binary inputs are accepted
-def bitMapper(ISOString):
+def bitMapper(isoString):
 
     # # code to run in case an xls file is necessary to be used
     # sheetName = "ISO - todos"
@@ -67,9 +67,9 @@ def bitMapper(ISOString):
 
     # getting binary code by calling hexadecimalToBinary external function if string parameter isn't binary already
     try:
-        binaryString = ISOString
+        binaryString = isoString
     except:
-        binaryString = HexadecimalToBinary(ISOString)
+        binaryString = HexadecimalToBinary(isoString)
 
 
     # array to return information

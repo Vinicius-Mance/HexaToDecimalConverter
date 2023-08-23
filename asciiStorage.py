@@ -3,10 +3,10 @@ from asciiReader import asciiReader
 import re
 
 # this function returns all the data, sorted and ready to be read
-def asciiStorage(ISOString):
+def asciiStorage(isoMessage):
 
     # variable to get all the fields present on the message by the ASCIIReader function
-    asciiInfo = asciiReader(ISOString)
+    asciiInfo = asciiReader(isoMessage)
 
     # variable to store binary bitmap from message
     isoString = asciiInfo[1]
