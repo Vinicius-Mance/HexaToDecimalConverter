@@ -1,4 +1,4 @@
-from ASCIIInfoReturner import ASCIIInfoReturner
+from asciiInfoReturner import asciiInfoReturner
 
 # main file for testing
 # standard strings for testing
@@ -12,4 +12,4 @@ from ASCIIInfoReturner import ASCIIInfoReturner
 # standard filepath for testing ASCII files:
 standardAscii = './files/rawascii'
 
-print(ASCIIInfoReturner(standardAscii))
+print(asciiInfoReturner(standardAscii))

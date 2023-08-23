@@ -1,9 +1,9 @@
-from ASCIIStorage import ASCIIStorage
+from asciiStorage import asciiStorage
 import os
 
-def ASCIIInfoReturner(ISOString):
+def asciiInfoReturner(ISOString):
 
-    data = ASCIIStorage(ISOString)
+    data = asciiStorage(ISOString)
     filetext = []
     for i in data:
         line = f'Bit: {i["bit"]} - {i["description"]} - {i["value"]}'

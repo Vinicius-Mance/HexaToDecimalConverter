@@ -1,12 +1,12 @@
-from HexadecimalToBinary import HexadecimalToBinary
+from hexadecimalToBinary import hexadecimalToBinary
 import pandas as pd
 import re
 import mysql.connector
-from DBConfig import DBConfig
+from dbConfig import dbConfig
 
 # this function receives a bitmap, and return all the present fields
 # either hexadecimal or binary inputs are accepted
-def BitMapper(ISOString):
+def bitMapper(ISOString):
 
     # # code to run in case an xls file is necessary to be used
     # sheetName = "ISO - todos"
@@ -49,7 +49,7 @@ def BitMapper(ISOString):
     # return bitMapInfo
 
     # function to get database data from config file
-    dbdata = DBConfig('./files/config.ini')
+    dbdata = dbConfig('./files/config.ini')
 
     connection = mysql.connector.connect(
         host=dbdata['host'],

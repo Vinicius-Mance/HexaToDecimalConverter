@@ -1,13 +1,13 @@
 # Python program to find the ASCII value of a character
-from HexadecimalToBinary import HexadecimalToBinary
-from HexadecimalToAscii import HexadecimalToAscii
+from hexadecimalToBinary import hexadecimalToBinary
+from hexadecimalToAscii import hexadecimalToAscii
 import pandas as pd
 import re
 
 # this function gets an ascii message and interpret it, either by a rawdata filepath, or a string
 # it returns an array with all the message information:
 # Message Type Indicator, binary bitmap, and the information from the massage itself
-def ASCIIReader(data):
+def asciiReader(data):
 
     # variable to store the data as a string to be interpreted
     try:
@@ -37,13 +37,13 @@ def ASCIIReader(data):
 
         # line to store Message Type Identifier (MTI)
         if i <= 8:
-            mti = mti + HexadecimalToAscii(pair)
+            mti = mti + hexadecimalToAscii(pair)
 
         # line to separate bitmap from rawdata
         elif i <= bitMapSize:
-            bitMap = bitMap + HexadecimalToBinary(pair)
+            bitMap = bitMap + hexadecimalToBinary(pair)
         else:
-            messageData = messageData + HexadecimalToAscii(pair)
+            messageData = messageData + hexadecimalToAscii(pair)
 
     finalMessage = [mti, bitMap, messageData]
 

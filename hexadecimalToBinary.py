@@ -2,7 +2,7 @@ import re
 
 # this function receives a hexadecimal string and return it as a binary string
 # this function is intended to be used for a bitmap interpretation, but can be used in other instances
-def HexadecimalToBinary(ISOString):
+def hexadecimalToBinary(ISOString):
 
     # variable to be returned with the final binary code as a string
     binaryString = ''

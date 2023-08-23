@@ -1,12 +1,12 @@
-from BitMapper import BitMapper
-from ASCIIReader import ASCIIReader
+from bitMapper import bitMapper
+from asciiReader import asciiReader
 import re
 
 # this function returns all the data, sorted and ready to be read
-def ASCIIStorage(ISOString):
+def asciiStorage(ISOString):
 
     # variable to get all the fields present on the message by the ASCIIReader function
-    asciiInfo = ASCIIReader(ISOString)
+    asciiInfo = asciiReader(ISOString)
 
     # variable to store binary bitmap from message
     isoString = asciiInfo[1]
@@ -25,7 +25,7 @@ def ASCIIStorage(ISOString):
     # each individual While loop saves the sorted information, and progresses
     # the position that indicates where is the next information to be sorted in the
     # rawdata string by the mdp variable above
-    for i in BitMapper(isoString):
+    for i in bitMapper(isoString):
 
         # condition to change the mdp position in case of a variable field
         if re.search("LLLVAR", i[1]):

@@ -1,6 +1,6 @@
 import configparser
 
-def DBConfig(filepath):
+def dbConfig(filepath):
 
     db = {}
     config = configparser.ConfigParser()

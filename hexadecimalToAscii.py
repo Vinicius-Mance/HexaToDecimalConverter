@@ -1,6 +1,6 @@
 # fucntion to convert an Hexadecimal ASCII encoded into a message with the intended characters
 # it returns a string of converted characters
-def HexadecimalToAscii(ISOString):
+def hexadecimalToAscii(ISOString):
 
     # string to storage ascii text to be returned by function
     asciiString = ""
