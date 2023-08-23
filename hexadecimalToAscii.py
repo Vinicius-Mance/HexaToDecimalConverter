@@ -17,3 +17,4 @@ def hexadecimalToAscii(isoString):
         asciiString = asciiString + asciiChar
 
     return asciiString
+

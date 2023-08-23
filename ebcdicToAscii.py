@@ -1,257 +1,265 @@
 
 def ebcdicToAscii(isoString):
 
-    if isoString == '00':
-        return '00'
-    elif isoString == '01':
-        return '01'
-    elif isoString == '02':
-        return '02'
-    elif isoString == '03':
-        return '03'
-    elif isoString == '05':
-        return '09'
-    elif isoString == '07':
-        return '7F'
-    elif isoString == '0B':
-        return '0B'
-    elif isoString == '0C':
-        return '0C'
-    elif isoString == '0D':
-        return '0D'
-    elif isoString == '0E':
-        return '0E'
-    elif isoString == '0F':
-        return '0F'
-    elif isoString == '10':
-        return '10'
-    elif isoString == '11':
-        return '11'
-    elif isoString == '12':
-        return '12'
-    elif isoString == '13':
-        return '13'
-    elif isoString == '16':
-        return '08'
-    elif isoString == '18':
-        return '18'
-    elif isoString == '19':
-        return '19'
-    elif isoString == '1C':
-        return '1C'
-    elif isoString == '1D':
-        return '1D'
-    elif isoString == '1E':
-        return '1E'
-    elif isoString == '1F':
-        return '1F'
-    elif isoString == '25':
-        return '0A'
-    elif isoString == '26':
-        return '17'
-    elif isoString == '27':
-        return '1B'
-    elif isoString == '2D':
-        return '05'
-    elif isoString == '2E':
-        return '06'
-    elif isoString == '2F':
-        return '07'
-    elif isoString == '32':
-        return '16'
-    elif isoString == '37':
-        return '04'
-    elif isoString == '3C':
-        return '14'
-    elif isoString == '3D':
-        return '15'
-    elif isoString == '40':
-        return '20'
-    elif isoString == '4A':
-        return '5B'
-    elif isoString == '4B':
-        return '2E'
-    elif isoString == '4C':
-        return '3C'
-    elif isoString == '4D':
-        return '28'
-    elif isoString == '4E':
-        return '2B'
-    elif isoString == '4F':
-        return '21'
-    elif isoString == '50':
-        return '26'
-    elif isoString == '5A':
-        return '5D'
-    elif isoString == '5B':
-        return '24'
-    elif isoString == '5C':
-        return '2A'
-    elif isoString == '5D':
-        return '29'
-    elif isoString == '5E':
-        return '3B'
-    elif isoString == '5F':
-        return '5E'
-    elif isoString == '60':
-        return '2D'
-    elif isoString == '6A':
-        return '7C'
-    elif isoString == '6B':
-        return '2C'
-    elif isoString == '6C':
-        return '25'
-    elif isoString == '6D':
-        return '5F'
-    elif isoString == '6E':
-        return '3E'
-    elif isoString == '6F':
-        return '3F'
-    elif isoString == '79':
-        return '60'
-    elif isoString == '7A':
-        return '3A'
-    elif isoString == '7B':
-        return '23'
-    elif isoString == '7C':
-        return '40'
-    elif isoString == '7D':
-        return '27'
-    elif isoString == '7E':
-        return '3D'
-    elif isoString == '7F':
-        return '22'
-    elif isoString == '81':
-        return '61'
-    elif isoString == '82':
-        return '62'
-    elif isoString == '83':
-        return '63'
-    elif isoString == '84':
-        return '64'
-    elif isoString == '85':
-        return '65'
-    elif isoString == '86':
-        return '66'
-    elif isoString == '87':
-        return '67'
-    elif isoString == '88':
-        return '68'
-    elif isoString == '89':
-        return '69'
-    elif isoString == '91':
-        return '6A'
-    elif isoString == '92':
-        return '6B'
-    elif isoString == '93':
-        return '6C'
-    elif isoString == '94':
-        return '6D'
-    elif isoString == '95':
-        return '6E'
-    elif isoString == '96':
-        return '6F'
-    elif isoString == '97':
-        return '70'
-    elif isoString == '98':
-        return '71'
-    elif isoString == '99':
-        return '72'
-    elif isoString == 'A1':
-        return '7E'
-    elif isoString == 'A2':
-        return '73'
-    elif isoString == 'A3':
-        return '74'
-    elif isoString == 'A4':
-        return '75'
-    elif isoString == 'A5':
-        return '76'
-    elif isoString == 'A6':
-        return '77'
-    elif isoString == 'A7':
-        return '78'
-    elif isoString == 'A8':
-        return '79'
-    elif isoString == 'A9':
-        return '7A'
-    elif isoString == 'C0':
-        return '7B'
-    elif isoString == 'C1':
-        return '41'
-    elif isoString == 'C2':
-        return '42'
-    elif isoString == 'C3':
-        return '43'
-    elif isoString == 'C4':
-        return '44'
-    elif isoString == 'C5':
-        return '45'
-    elif isoString == 'C6':
-        return '46'
-    elif isoString == 'C7':
-        return '47'
-    elif isoString == 'C8':
-        return '48'
-    elif isoString == 'C9':
-        return '49'
-    elif isoString == 'D0':
-        return '7D'
-    elif isoString == 'D1':
-        return '4A'
-    elif isoString == 'D2':
-        return '4B'
-    elif isoString == 'D3':
-        return '4C'
-    elif isoString == 'D4':
-        return '4D'
-    elif isoString == 'D5':
-        return '4E'
-    elif isoString == 'D6':
-        return '4F'
-    elif isoString == 'D7':
-        return '50'
-    elif isoString == 'D8':
-        return '51'
-    elif isoString == 'D9':
-        return '52'
-    elif isoString == 'E0':
-        return '5C'
-    elif isoString == 'E2':
-        return '53'
-    elif isoString == 'E3':
-        return '54'
-    elif isoString == 'E4':
-        return '55'
-    elif isoString == 'E5':
-        return '56'
-    elif isoString == 'E6':
-        return '57'
-    elif isoString == 'E7':
-        return '58'
-    elif isoString == 'E8':
-        return '59'
-    elif isoString == 'E9':
-        return '5A'
-    elif isoString == 'F0':
-        return '30'
-    elif isoString == 'F1':
-        return '31'
-    elif isoString == 'F2':
-        return '32'
-    elif isoString == 'F3':
-        return '33'
-    elif isoString == 'F4':
-        return '34'
-    elif isoString == 'F5':
-        return '35'
-    elif isoString == 'F6':
-        return '36'
-    elif isoString == 'F7':
-        return '37'
-    elif isoString == 'F8':
-        return '38'
-    elif isoString == 'F9':
-        return '39'
-    else:
-        return 'A1'
+    asciiString = ''
+    pair = ''
+
+    for i in range(0, len(isoString), 2):
+        # variable to storage a pair of characters to be analyzed
+        pair = isoString[i: i + 2]
+
+        if pair == '00':
+            asciiString = asciiString + '00'
+        elif pair == '01':
+            asciiString = asciiString + '01'
+        elif pair == '02':
+            asciiString = asciiString + '02'
+        elif pair == '03':
+            asciiString = asciiString + '03'
+        elif pair == '05':
+            asciiString = asciiString + '09'
+        elif pair == '07':
+            asciiString = asciiString + '7F'
+        elif pair == '0B':
+            asciiString = asciiString + '0B'
+        elif pair == '0C':
+            asciiString = asciiString + '0C'
+        elif pair == '0D':
+            asciiString = asciiString + '0D'
+        elif pair == '0E':
+            asciiString = asciiString + '0E'
+        elif pair == '0F':
+            asciiString = asciiString + '0F'
+        elif pair == '10':
+            asciiString = asciiString + '10'
+        elif pair == '11':
+            asciiString = asciiString + '11'
+        elif pair == '12':
+            asciiString = asciiString + '12'
+        elif pair == '13':
+            asciiString = asciiString + '13'
+        elif pair == '16':
+            asciiString = asciiString + '08'
+        elif pair == '18':
+            asciiString = asciiString + '18'
+        elif pair == '19':
+            asciiString = asciiString + '19'
+        elif pair == '1C':
+            asciiString = asciiString + '1C'
+        elif pair == '1D':
+            asciiString = asciiString + '1D'
+        elif pair == '1E':
+            asciiString = asciiString + '1E'
+        elif pair == '1F':
+            asciiString = asciiString + '1F'
+        elif pair == '25':
+            asciiString = asciiString + '0A'
+        elif pair == '26':
+            asciiString = asciiString + '17'
+        elif pair == '27':
+            asciiString = asciiString + '1B'
+        elif pair == '2D':
+            asciiString = asciiString + '05'
+        elif pair == '2E':
+            asciiString = asciiString + '06'
+        elif pair == '2F':
+            asciiString = asciiString + '07'
+        elif pair == '32':
+            asciiString = asciiString + '16'
+        elif pair == '37':
+            asciiString = asciiString + '04'
+        elif pair == '3C':
+            asciiString = asciiString + '14'
+        elif pair == '3D':
+            asciiString = asciiString + '15'
+        elif pair == '40':
+            asciiString = asciiString + '20'
+        elif pair == '4A':
+            asciiString = asciiString + '5B'
+        elif pair == '4B':
+            asciiString = asciiString + '2E'
+        elif pair == '4C':
+            asciiString = asciiString + '3C'
+        elif pair == '4D':
+            asciiString = asciiString + '28'
+        elif pair == '4E':
+            asciiString = asciiString + '2B'
+        elif pair == '4F':
+            asciiString = asciiString + '21'
+        elif pair == '50':
+            asciiString = asciiString + '26'
+        elif pair == '5A':
+            asciiString = asciiString + '5D'
+        elif pair == '5B':
+            asciiString = asciiString + '24'
+        elif pair == '5C':
+            asciiString = asciiString + '2A'
+        elif pair == '5D':
+            asciiString = asciiString + '29'
+        elif pair == '5E':
+            asciiString = asciiString + '3B'
+        elif pair == '5F':
+            asciiString = asciiString + '5E'
+        elif pair == '60':
+            asciiString = asciiString + '2D'
+        elif pair == '6A':
+            asciiString = asciiString + '7C'
+        elif pair == '6B':
+            asciiString = asciiString + '2C'
+        elif pair == '6C':
+            asciiString = asciiString + '25'
+        elif pair == '6D':
+            asciiString = asciiString + '5F'
+        elif pair == '6E':
+            asciiString = asciiString + '3E'
+        elif pair == '6F':
+            asciiString = asciiString + '3F'
+        elif pair == '79':
+            asciiString = asciiString + '60'
+        elif pair == '7A':
+            asciiString = asciiString + '3A'
+        elif pair == '7B':
+            asciiString = asciiString + '23'
+        elif pair == '7C':
+            asciiString = asciiString + '40'
+        elif pair == '7D':
+            asciiString = asciiString + '27'
+        elif pair == '7E':
+            asciiString = asciiString + '3D'
+        elif pair == '7F':
+            asciiString = asciiString + '22'
+        elif pair == '81':
+            asciiString = asciiString + '61'
+        elif pair == '82':
+            asciiString = asciiString + '62'
+        elif pair == '83':
+            asciiString = asciiString + '63'
+        elif pair == '84':
+            asciiString = asciiString + '64'
+        elif pair == '85':
+            asciiString = asciiString + '65'
+        elif pair == '86':
+            asciiString = asciiString + '66'
+        elif pair == '87':
+            asciiString = asciiString + '67'
+        elif pair == '88':
+            asciiString = asciiString + '68'
+        elif pair == '89':
+            asciiString = asciiString + '69'
+        elif pair == '91':
+            asciiString = asciiString + '6A'
+        elif pair == '92':
+            asciiString = asciiString + '6B'
+        elif pair == '93':
+            asciiString = asciiString + '6C'
+        elif pair == '94':
+            asciiString = asciiString + '6D'
+        elif pair == '95':
+            asciiString = asciiString + '6E'
+        elif pair == '96':
+            asciiString = asciiString + '6F'
+        elif pair == '97':
+            asciiString = asciiString + '70'
+        elif pair == '98':
+            asciiString = asciiString + '71'
+        elif pair == '99':
+            asciiString = asciiString + '72'
+        elif pair == 'A1':
+            asciiString = asciiString + '7E'
+        elif pair == 'A2':
+            asciiString = asciiString + '73'
+        elif pair == 'A3':
+            asciiString = asciiString + '74'
+        elif pair == 'A4':
+            asciiString = asciiString + '75'
+        elif pair == 'A5':
+            asciiString = asciiString + '76'
+        elif pair == 'A6':
+            asciiString = asciiString + '77'
+        elif pair == 'A7':
+            asciiString = asciiString + '78'
+        elif pair == 'A8':
+            asciiString = asciiString + '79'
+        elif pair == 'A9':
+            asciiString = asciiString + '7A'
+        elif pair == 'C0':
+            asciiString = asciiString + '7B'
+        elif pair == 'C1':
+            asciiString = asciiString + '41'
+        elif pair == 'C2':
+            asciiString = asciiString + '42'
+        elif pair == 'C3':
+            asciiString = asciiString + '43'
+        elif pair == 'C4':
+            asciiString = asciiString + '44'
+        elif pair == 'C5':
+            asciiString = asciiString + '45'
+        elif pair == 'C6':
+            asciiString = asciiString + '46'
+        elif pair == 'C7':
+            asciiString = asciiString + '47'
+        elif pair == 'C8':
+            asciiString = asciiString + '48'
+        elif pair == 'C9':
+            asciiString = asciiString + '49'
+        elif pair == 'D0':
+            asciiString = asciiString + '7D'
+        elif pair == 'D1':
+            asciiString = asciiString + '4A'
+        elif pair == 'D2':
+            asciiString = asciiString + '4B'
+        elif pair == 'D3':
+            asciiString = asciiString + '4C'
+        elif pair == 'D4':
+            asciiString = asciiString + '4D'
+        elif pair == 'D5':
+            asciiString = asciiString + '4E'
+        elif pair == 'D6':
+            asciiString = asciiString + '4F'
+        elif pair == 'D7':
+            asciiString = asciiString + '50'
+        elif pair == 'D8':
+            asciiString = asciiString + '51'
+        elif pair == 'D9':
+            asciiString = asciiString + '52'
+        elif pair == 'E0':
+            asciiString = asciiString + '5C'
+        elif pair == 'E2':
+            asciiString = asciiString + '53'
+        elif pair == 'E3':
+            asciiString = asciiString + '54'
+        elif pair == 'E4':
+            asciiString = asciiString + '55'
+        elif pair == 'E5':
+            asciiString = asciiString + '56'
+        elif pair == 'E6':
+            asciiString = asciiString + '57'
+        elif pair == 'E7':
+            asciiString = asciiString + '58'
+        elif pair == 'E8':
+            asciiString = asciiString + '59'
+        elif pair == 'E9':
+            asciiString = asciiString + '5A'
+        elif pair == 'F0':
+            asciiString = asciiString + '30'
+        elif pair == 'F1':
+            asciiString = asciiString + '31'
+        elif pair == 'F2':
+            asciiString = asciiString + '32'
+        elif pair == 'F3':
+            asciiString = asciiString + '33'
+        elif pair == 'F4':
+            asciiString = asciiString + '34'
+        elif pair == 'F5':
+            asciiString = asciiString + '35'
+        elif pair == 'F6':
+            asciiString = asciiString + '36'
+        elif pair == 'F7':
+            asciiString = asciiString + '37'
+        elif pair == 'F8':
+            asciiString = asciiString + '38'
+        elif pair == 'F9':
+            asciiString = asciiString + '39'
+        else:
+            asciiString = asciiString + 'A1'
+    return asciiString

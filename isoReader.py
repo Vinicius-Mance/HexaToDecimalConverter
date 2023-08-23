@@ -1,6 +1,7 @@
 # Python program to find the ASCII value of a character
 from hexadecimalToBinary import hexadecimalToBinary
 from hexadecimalToAscii import hexadecimalToAscii
+from ebcdicToAscii import ebcdicToAscii
 import pandas as pd
 import re
 
@@ -16,6 +17,10 @@ def isoReader(data):
     except:
         stringData = data
 
+    try:
+        hexadecimalToAscii(stringData)
+    except:
+        stringData = ebcdicToAscii(stringData)
     # variables to store data as strings to be returned at end of function
     mti = ''
     bitMap = ''
