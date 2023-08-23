@@ -7,7 +7,7 @@ import re
 # this function gets an ascii message and interpret it, either by a rawdata filepath, or a string
 # it returns an array with all the message information:
 # Message Type Indicator, binary bitmap, and the information from the massage itself
-def asciiReader(data):
+def isoReader(data):
 
     # variable to store the data as a string to be interpreted
     try:

@@ -1,12 +1,12 @@
 from bitMapper import bitMapper
-from asciiReader import asciiReader
+from isoReader import isoReader
 import re
 
 # this function returns all the data, sorted and ready to be read
-def asciiStorage(isoMessage):
+def isoStorage(isoMessage):
 
     # variable to get all the fields present on the message by the ASCIIReader function
-    asciiInfo = asciiReader(isoMessage)
+    asciiInfo = isoReader(isoMessage)
 
     # variable to store binary bitmap from message
     isoString = asciiInfo[1]
