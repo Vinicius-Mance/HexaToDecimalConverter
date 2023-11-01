@@ -1,4 +1,4 @@
-from isoFileInfoReturner import isoFileInfoReturner
+from asciiInfoReturner import asciiInfoReturner
 
 # main file for testing
 # standard strings for testing
@@ -11,6 +11,5 @@ from isoFileInfoReturner import isoFileInfoReturner
 
 # standard filepath for testing ASCII files:
 standardAscii = './files/rawascii'
-# standardEbcdic = './files/rawebcdic'
-print(isoFileInfoReturner(standardAscii))
-# print(isoFileInfoReturner(standardEbcdic))
+
+print(asciiInfoReturner(standardAscii))
