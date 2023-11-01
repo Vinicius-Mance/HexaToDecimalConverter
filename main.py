@@ -11,5 +11,4 @@ from asciiInfoReturner import asciiInfoReturner
 
 # standard filepath for testing ASCII files:
 standardAscii = './files/rawascii'
-
 print(asciiInfoReturner(standardAscii))
